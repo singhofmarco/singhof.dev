@@ -199,7 +199,7 @@ export default async function Home() {
             conversation.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Marco, a software engineer and entrepreneur based in Munich,
+            I'm Marco, a software engineer based in Munich,
             Germany. I'm passionate about building software that helps people
             and businesses. I'm currently looking for work in the Washington
             D.C. metro area.
