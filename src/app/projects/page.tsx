@@ -11,7 +11,7 @@ const projects = [
     name: 'Tastebuds AI',
     description:
       'A culinary app delivering tailored recipe suggestions using machine learning.',
-    link: { href: '#', label: 'tastebudsai.com' },
+    link: { href: 'https://www.tastebudsai.com', label: 'tastebudsai.com' },
     logo: logoTastebuds,
   },
   {
