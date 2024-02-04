@@ -6,7 +6,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import logoTastebuds from '@/images/logos/tastebuds-ai.svg'
 import logoNoSlowAnimations from '@/images/logos/noslowanimations.png'
 
-export const projects = [
+const projects = [
   {
     name: 'Tastebuds AI',
     description:
