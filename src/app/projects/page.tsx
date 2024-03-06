@@ -3,16 +3,39 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import logoCurran from '@/images/logos/curran.svg'
+import logoDls from '@/images/logos/dls.svg'
 import logoTastebuds from '@/images/logos/tastebuds-ai.svg'
 import logoNoSlowAnimations from '@/images/logos/noslowanimations.png'
 
 const projects = [
   {
-    name: 'Tastebuds AI',
+    name: 'Tastebuds AI (Work in Progress)',
     description:
-      'A culinary app delivering tailored recipe suggestions using machine learning.',
+      'A culinary app I started working on recently, delivering tailored recipe suggestions using machine learning.',
     link: { href: 'https://www.tastebudsai.com', label: 'tastebudsai.com' },
     logo: logoTastebuds,
+  },
+  {
+    name: 'Curran Online',
+    description:
+      'A client\'s website selling high-end outdoor furniture.',
+    link: { href: 'https://www.curranonline.com', label: 'curranonline.com' },
+    logo: logoCurran,
+  },
+  {
+    name: 'Sisalcarpet.com',
+    description:
+      'A client\'s website selling custom area rugs and flooring.',
+    link: { href: 'https://www.sisalcarpet.com', label: 'sisalcarpet.com' },
+    logo: logoCurran,
+  },
+  {
+    name: 'Dental-Labor Singhof',
+    description:
+      'A client\'s website offering dental technician services.',
+    link: { href: 'https://www.curranonline.com', label: 'curranonline.com' },
+    logo: logoDls,
   },
   {
     name: 'NoSlowAnimations',
@@ -39,14 +62,14 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Things I\'ve made because I thought they were cool.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
       title="Things I've made because I thought they were cool."
-      intro="I love working on projects, especially those I find useful or fun to use myself. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      intro="I love working on projects, especially those I find useful or fun to use myself. Some of them are websites I worked on for clients, others are personal projects or open-source contributions. Here are a few of them."
     >
       <ul
         role="list"
