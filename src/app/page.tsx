@@ -201,8 +201,7 @@ export default async function Home() {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I'm Marco, a software engineer based in Munich,
             Germany. I'm passionate about building software that helps people
-            and businesses. I'm currently looking for work in the Washington
-            D.C. metro area.
+            and businesses.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -216,22 +215,6 @@ export default async function Home() {
               icon={LinkedInIcon}
             />
           </div>
-        </div>
-      </Container>
-
-      <Container className="mt-12">
-        <div className="flex flex-col justify-between gap-x-6 gap-y-4 rounded-xl bg-blue-900 px-6 py-6 shadow-md sm:flex-row sm:items-center sm:py-3 sm:pl-4 sm:pr-3.5">
-          <div className="text-sm leading-6 text-white md:flex">
-            <div className="font-semibold">Are you hiring?&nbsp;</div>
-            <div>I'm currently looking for work in Washington D.C.</div>
-          </div>
-          <a
-            href="/CV - Marco Singhof.pdf"
-            className="whitespace-nowrap text-sm font-semibold text-white"
-            target="_blank"
-          >
-            Download CV&nbsp;<span aria-hidden="true">&rarr;</span>
-          </a>
         </div>
       </Container>
 

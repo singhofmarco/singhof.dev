@@ -79,8 +79,7 @@ export default function About() {
               State Department. Upon returning to Germany, I was fueled by a
               newfound determination and a clear vision for my future. I spent
               five years, balancing full-time work with the pursuit of a
-              bachelor's degree. My goal was unwavering: to return to the U.S.
-              and work in the tech industry.
+              bachelor's degree.
             </p>
             <p>
               Throughout this journey, my love for software development grew as
@@ -89,11 +88,6 @@ export default function About() {
               belt, my expertise lies in full-stack web development. However,
               I've always been passionate about learning new skills and tools to
               expand my repertoire.
-            </p>
-            <p>
-              I'm excited for what the future brings as I'm currently looking
-              for work in the Washington D.C. metro area. Feel free to reach
-              out!
             </p>
           </div>
         </div>
