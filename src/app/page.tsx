@@ -199,8 +199,8 @@ export default async function Home() {
             conversation.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Marco, a software engineer based in Munich,
-            Germany. I'm passionate about building software that helps people
+            I'm Marco, a software engineer based in Washington,
+            D.C. I'm passionate about building software that helps people
             and businesses.
           </p>
           <div className="mt-6 flex gap-6">
