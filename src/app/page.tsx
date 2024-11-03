@@ -1,19 +1,39 @@
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
-  XIcon,
 } from '@/components/SocialIcons'
 import logoCurran from '@/images/logos/curran.svg'
+import logoGeorgetown from '@/images/logos/georgetown.jpeg'
 import logoDos from '@/images/logos/dos.svg'
 import logoDLS from '@/images/logos/dls.svg'
+import logoLmu from '@/images/logos/lmu.jpeg'
+
+function EducationIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg
+    viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+
+        d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+      />
+    </svg>
+  )
+}
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -106,13 +126,13 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none overflow-hidden items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-          {role.company}
+        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100"
+        dangerouslySetInnerHTML={{__html: role.company}}>
         </dd>
         <dt className="sr-only">Role</dt>
         <dd className="text-xs text-zinc-500 dark:text-zinc-400">
@@ -164,23 +184,64 @@ function Resume() {
     },
   ]
 
+  let education: Array<Role> = [
+    {
+      company: 'Georgetown University',
+      title: 'Master of Science in Computer Science',
+      logo: logoGeorgetown,
+      start: 'Aug 2024',
+      end: 'Dec 2026',
+    },
+    {
+      company: 'Ludwig-Maximilians-Universit&auml;t M&uuml;nchen',
+      title: 'Bachelor of Science in Computer Science',
+      logo: logoLmu,
+      start: 'Sep 2018',
+      end: 'Jun 2024',
+    },
+  ]
+
   return (
     <div className="">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Experience</span>
-      </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <Role key={roleIndex} role={role} />
-        ))}
-      </ol>
+      <div className="flex gap-x-10 gap-y-10 flex-col">
+        <div>
+          <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <BriefcaseIcon className="h-6 w-6 flex-none" />
+            <span className="ml-3">Experience</span>
+          </h2>
+          <ol className="mt-6 space-y-4">
+            {resume.map((role, roleIndex) => (
+              <Role key={roleIndex} role={role} />
+            ))}
+          </ol>
+        </div>
+        <div>
+          <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <EducationIcon className="h-6 w-6 flex-none" />
+            <span className="ml-3">Education</span>
+          </h2>
+          <ol className="mt-6 space-y-4">
+            {education.map((role, roleIndex) => (
+              <Role key={roleIndex} role={role} />
+            ))}
+          </ol>
+        </div>
+      </div>
       <div className="mt-6 flex gap-x-4 sm:gap-x-10">
-        <Button href="mailto:marco@singhof.dev" variant="secondary" className="group mt-6 w-full">
+        <Button
+          href="mailto:marco@singhof.dev"
+          variant="secondary"
+          className="group mt-6 w-full"
+        >
           Contact
           <MailIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:stroke-zinc-100 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
-        <Button href="/CV - Marco Singhof.pdf" target="_blank" variant="secondary" className="group mt-6 w-full">
+        <Button
+          href="/CV - Marco Singhof.pdf"
+          target="_blank"
+          variant="secondary"
+          className="group mt-6 w-full"
+        >
           Download CV
           <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
@@ -199,9 +260,8 @@ export default async function Home() {
             conversation.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Marco, a software engineer based in Washington,
-            D.C. I'm passionate about building software that helps people
-            and businesses.
+            I'm Marco, a software engineer based in Washington, D.C. I'm
+            passionate about building software that helps people and businesses.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
