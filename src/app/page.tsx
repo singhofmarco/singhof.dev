@@ -155,18 +155,18 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
+      company: 'Dental-Labor Singhof GbR',
+      title: 'Freelance Work',
+      logo: logoDLS,
+      start: 'Jul 2023',
+      end: 'Sep 2023',
+    },
+    {
       company: 'Curran Catalog LLC.',
       title: 'Lead Developer',
       logo: logoCurran,
       start: 'Jul 2018',
-      end: 'Apr 2023',
-    },
-    {
-      company: 'Dental-Labor Singhof GbR',
-      title: 'Web Developer',
-      logo: logoDLS,
-      start: 'Mar 2023',
-      end: 'Apr 2023',
+      end: 'May 2023',
     },
     {
       company: 'Curran Catalog LLC.',
