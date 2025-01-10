@@ -183,7 +183,7 @@ function Resume() {
       title: 'Master of Science in Computer Science',
       logo: logoGeorgetown,
       start: 'Aug 2024',
-      end: 'Dec 2026',
+      end: 'Dec 2025',
     },
     {
       company: 'Ludwig-Maximilians-Universit&auml;t M&uuml;nchen',
