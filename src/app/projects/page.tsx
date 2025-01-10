@@ -34,7 +34,7 @@ const projects = [
     name: 'Dental-Labor Singhof',
     description:
       'A client\'s website offering dental technician services.',
-    link: { href: 'https://www.curranonline.com', label: 'curranonline.com' },
+    link: { href: 'https://www.dentallabor-singhof.de/', label: 'dentallabor-singhof.de' },
     logo: logoDls,
   },
   {
