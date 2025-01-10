@@ -168,13 +168,6 @@ function Resume() {
       start: 'Jan 2018',
       end: 'Jun 2018',
     },
-    {
-      company: 'U.S. Department of State',
-      title: 'Junior Ambassador | Congress-Bundestag-Youth-Exchange',
-      logo: logoDos,
-      start: 'Aug 2017',
-      end: 'Jul 2018',
-    },
   ]
 
   let education: Array<Role> = [
@@ -192,12 +185,19 @@ function Resume() {
       start: 'Sep 2018',
       end: 'Jun 2024',
     },
+    {
+      company: 'U.S. Department of State',
+      title: 'Congress-Bundestag-Youth-Exchange',
+      logo: logoDos,
+      start: 'Aug 2017',
+      end: 'Jul 2018',
+    },
   ]
 
   return (
     <div className="">
-      <div className="flex gap-x-10 gap-y-10 flex-col">
-        <div>
+      <div className="flex gap-x-24 gap-y-10 flex-col lg:flex-row">
+        <div className="w-full">
           <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             <BriefcaseIcon className="h-6 w-6 flex-none" />
             <span className="ml-3">Experience</span>
@@ -208,7 +208,7 @@ function Resume() {
             ))}
           </ol>
         </div>
-        <div>
+        <div className="w-full">
           <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             <EducationIcon className="h-6 w-6 flex-none" />
             <span className="ml-3">Education</span>
@@ -220,23 +220,21 @@ function Resume() {
           </ol>
         </div>
       </div>
-      <div className="mt-6 flex gap-x-4 sm:gap-x-10">
+      <div className="mt-12 flex gap-x-4 sm:gap-x-10">
         <Button
           href="mailto:marco@singhof.dev"
-          variant="secondary"
+          variant="primary"
           className="group mt-6 w-full"
         >
           Contact
           <MailIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:stroke-zinc-100 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
         <Button
-          href="/CV - Marco Singhof.pdf"
-          target="_blank"
+          href="projects"
           variant="secondary"
           className="group mt-6 w-full"
         >
-          Download CV
-          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+          See Projects
         </Button>
       </div>
     </div>
