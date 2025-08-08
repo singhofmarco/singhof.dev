@@ -1,7 +1,5 @@
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
-
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import logoCurran from '@/images/logos/curran.svg'
@@ -223,23 +221,6 @@ function Resume() {
             ))}
           </ol>
         </div>
-      </div>
-      <div className="mt-12 flex gap-x-4 sm:gap-x-10">
-        <Button
-          href="mailto:marco@singhof.dev"
-          variant="primary"
-          className="group mt-6 w-full"
-        >
-          Contact
-          <MailIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:stroke-zinc-100 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-        </Button>
-        <Button
-          href="projects"
-          variant="secondary"
-          className="group mt-6 w-full"
-        >
-          See Projects
-        </Button>
       </div>
     </div>
   )
