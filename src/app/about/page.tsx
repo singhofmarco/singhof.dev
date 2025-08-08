@@ -4,10 +4,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import portrait from '@/images/portrait.jpeg'
 
 function SocialLink({
@@ -47,8 +44,7 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'About',
-  description:
-    'I\'m Marco Singhof. I build things for the web.',
+  description: "I'm Marco Singhof. I build things for the web.",
 }
 
 export default function About() {
@@ -73,30 +69,28 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I've always been interested in computers and everything tech. At
-              18, I leaped at the chance to spend a year in Seattle through a
-              fellowship program funded by the German Bundestag and the U.S.
-              State Department. Upon returning to Germany, I was fueled by a
-              newfound determination and a clear vision for my future. I spent
-              five years, balancing full-time work with the pursuit of a
-              bachelor's degree.
-            </p>
-            <p>
-              Throughout this journey, my love for software development grew as
-              I learned to use exciting tools like Next.js, TypeScript, and
-              CI/CD. With over five years of professional experience under my
-              belt, my expertise lies in full-stack web development. However,
-              I've always been passionate about learning new skills and tools to
-              expand my repertoire.
+              I'm a full-stack software engineer with 6+ years of experience
+              delivering high-impact web applications in fast-paced, agile
+              environments. Skilled in modern frameworks and tools including
+              Next.js, React, Node.js, TypeScript, CI/CD, and cloud-first
+              architecture.
             </p>
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="https://github.com/singhofmarco" icon={GitHubIcon} className="mt-4">
+            <SocialLink
+              href="https://github.com/singhofmarco"
+              icon={GitHubIcon}
+              className="mt-4"
+            >
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="https://www.linkedin.com/in/marco-singhof/" icon={LinkedInIcon} className="mt-4">
+            <SocialLink
+              href="https://www.linkedin.com/in/marco-singhof/"
+              icon={LinkedInIcon}
+              className="mt-4"
+            >
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
