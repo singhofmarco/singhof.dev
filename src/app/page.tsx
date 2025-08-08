@@ -3,20 +3,17 @@ import Link from 'next/link'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import logoCurran from '@/images/logos/curran.svg'
 import logoGeorgetown from '@/images/logos/georgetown.jpeg'
 import logoDos from '@/images/logos/dos.svg'
-import logoDLS from '@/images/logos/dls.svg'
+import logoCipio from '@/images/logos/cipio.png'
 import logoLmu from '@/images/logos/lmu.jpeg'
 
 function EducationIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
-    viewBox="0 0 24 24"
+      viewBox="0 0 24 24"
       fill="none"
       strokeWidth="1.5"
       strokeLinecap="round"
@@ -28,7 +25,6 @@ function EducationIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         strokeLinecap="round"
         strokeLinejoin="round"
         className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-
         d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
       />
     </svg>
@@ -126,14 +122,15 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none overflow-hidden items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center overflow-hidden rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100"
-        dangerouslySetInnerHTML={{__html: role.company}}>
-        </dd>
+        <dd
+          className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100"
+          dangerouslySetInnerHTML={{ __html: role.company }}
+        ></dd>
         <dt className="sr-only">Role</dt>
         <dd className="text-xs text-zinc-500 dark:text-zinc-400">
           {role.title}
@@ -155,6 +152,13 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
+      company: 'CIPIO.ai',
+      title: 'Software Engineer',
+      logo: logoCipio,
+      start: 'Jun 2025',
+      end: 'Aug 2025',
+    },
+    {
       company: 'Curran Catalog LLC.',
       title: 'Lead Software Engineer',
       logo: logoCurran,
@@ -163,7 +167,7 @@ function Resume() {
     },
     {
       company: 'Curran Catalog LLC.',
-      title: 'Software Engineer Intern',
+      title: 'Software Engineer',
       logo: logoCurran,
       start: 'Jan 2018',
       end: 'Jun 2018',
@@ -196,7 +200,7 @@ function Resume() {
 
   return (
     <div className="">
-      <div className="flex gap-x-24 gap-y-10 flex-col lg:flex-row">
+      <div className="flex flex-col gap-x-24 gap-y-10 lg:flex-row">
         <div className="w-full">
           <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             <BriefcaseIcon className="h-6 w-6 flex-none" />
