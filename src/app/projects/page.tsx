@@ -6,6 +6,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import logoCurran from '@/images/logos/curran.svg'
 import logoDls from '@/images/logos/dls.svg'
 import logoTastebuds from '@/images/logos/tastebuds-ai.svg'
+import logoDarkFolders7 from '@/images/logos/darkfolders7.png'
 import logoNoSlowAnimations from '@/images/logos/noslowanimations.png'
 
 const projects = [
@@ -18,24 +19,33 @@ const projects = [
   },
   {
     name: 'Curran Online',
-    description:
-      'A client\'s website selling high-end outdoor furniture.',
+    description: "A client's website selling high-end outdoor furniture.",
     link: { href: 'https://www.curranonline.com', label: 'curranonline.com' },
     logo: logoCurran,
   },
   {
     name: 'Sisalcarpet.com',
-    description:
-      'A client\'s website selling custom area rugs and flooring.',
+    description: "A client's website selling custom area rugs and flooring.",
     link: { href: 'https://www.sisalcarpet.com', label: 'sisalcarpet.com' },
     logo: logoCurran,
   },
   {
     name: 'Dental-Labor Singhof',
-    description:
-      'A client\'s website offering dental technician services.',
-    link: { href: 'https://www.dentallabor-singhof.de/', label: 'dentallabor-singhof.de' },
+    description: "A client's website offering dental technician services.",
+    link: {
+      href: 'https://www.dentallabor-singhof.de/',
+      label: 'dentallabor-singhof.de',
+    },
     logo: logoDls,
+  },
+  {
+    name: 'DarkFolders7',
+    description: 'Jailbreak tweak that makes folders dark on iOS 7 & 8.',
+    link: {
+      href: 'https://github.com/singhofmarco/DarkFolders7',
+      label: 'github.com',
+    },
+    logo: logoDarkFolders7,
   },
   {
     name: 'NoSlowAnimations',
@@ -62,7 +72,7 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I\'ve made because I thought they were cool.',
+  description: "Things I've made because I thought they were cool.",
 }
 
 export default function Projects() {
@@ -78,11 +88,7 @@ export default function Projects() {
         {projects.map((project) => (
           <Card as="li" key={project.name}>
             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-md bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-              />
+              <Image src={project.logo} alt="" className="h-8 w-8" />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
               <Card.Link href={project.link.href} target="_blank">
