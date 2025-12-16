@@ -65,6 +65,19 @@ export default function Home() {
             Software engineer, multilingual in code and conversation.
           </h2>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-300">
+            <div className="flex items-center gap-x-4 border-b border-b-zinc-200 pb-7 pl-2 sm:order-last sm:pl-0 dark:border-b-zinc-700">
+              <div className="flex h-3 w-3 rounded-full bg-green-400 shadow-inner before:h-3 before:w-3 before:animate-ping before:rounded-full before:ring-2 before:ring-inset before:ring-green-400"></div>
+              <div>
+                Currently <span className="font-medium">available</span> for new
+                opportunities →{' '}
+                <a
+                  className="font-bold hover:underline"
+                  href="mailto:marco@singhof.dev"
+                >
+                  marco@singhof.dev
+                </a>
+              </div>
+            </div>
             <p>
               I shipped my first code in 2013 with{' '}
               <a
@@ -89,17 +102,6 @@ export default function Home() {
               Maximilian University of Munich (LMU) and will receive my Master’s
               degree in Computer Science from Georgetown University in December
               2025.
-            </p>
-            <p>
-              Currently{' '}
-              <span className="font-medium text-green-500">available</span> for
-              new opportunities →{' '}
-              <a
-                className="font-bold hover:underline"
-                href="mailto:marco@singhof.dev"
-              >
-                marco@singhof.dev
-              </a>
             </p>
           </div>
         </div>
