@@ -11,51 +11,57 @@ import logoNoSlowAnimations from '@/images/logos/noslowanimations.png'
 
 const projects = [
   {
-    name: 'Tastebuds AI (Work in Progress)',
+    name: 'Tastebuds AI',
     description:
-      'A culinary app I started working on recently, delivering tailored recipe suggestions using machine learning.',
+      'Recipe generation app that makes it fun to try new dishes in the kitchen.',
     link: { href: 'https://www.tastebudsai.com', label: 'tastebudsai.com' },
     logo: logoTastebuds,
+    year: '2024-2025',
   },
   {
     name: 'Curran Online',
-    description: "A client's website selling high-end outdoor furniture.",
+    description: "Client's website selling high-end outdoor furniture.",
     link: { href: 'https://www.curranonline.com', label: 'curranonline.com' },
     logo: logoCurran,
+    year: '2018-2023',
   },
   {
     name: 'Sisalcarpet.com',
-    description: "A client's website selling custom area rugs and flooring.",
+    description: "Client's website selling custom area rugs and flooring.",
     link: { href: 'https://www.sisalcarpet.com', label: 'sisalcarpet.com' },
     logo: logoCurran,
+    year: '2018-2023',
   },
   {
     name: 'Dental-Labor Singhof',
-    description: "A client's website offering dental technician services.",
+    description: "Client's website offering dental technician services.",
     link: {
       href: 'https://www.dentallabor-singhof.de/',
       label: 'dentallabor-singhof.de',
     },
     logo: logoDls,
+    year: '2023',
   },
   {
     name: 'DarkFolders7',
-    description: 'Jailbreak tweak that makes folders dark on iOS 7 & 8.',
+    description: 'Jailbreak tweak that turns folders dark on iOS 7 & 8.',
     link: {
       href: 'https://github.com/singhofmarco/DarkFolders7',
       label: 'github.com',
     },
     logo: logoDarkFolders7,
+    year: '2013',
   },
   {
     name: 'NoSlowAnimations',
     description:
-      'Jailbreak tweak designed for iOS devices with 2+ mio downloads, speeding up animations.',
+      'Speeds up animations on jailbroken iOS 7-9 with 2+ mio downloads.',
     link: {
       href: 'https://github.com/singhofmarco/NoSlowAnimations',
       label: 'github.com',
     },
     logo: logoNoSlowAnimations,
+    year: '2013',
   },
 ]
 
@@ -78,8 +84,8 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I've made because I thought they were cool."
-      intro="I love working on projects, especially those I find useful or fun to use myself. Some of them are websites I worked on for clients, others are personal projects or open-source contributions. Here are a few of them."
+      title="Things I've Made"
+      intro="I love building things with code, from full applications and websites to small tools I enjoy using myself. Here are a few of them. If you’re looking for a developer who can take your project from idea to finished product (0 to 1), let's chat."
     >
       <ul
         role="list"
@@ -87,14 +93,20 @@ export default function Projects() {
       >
         {projects.map((project) => (
           <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-md bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={project.logo} alt="" className="h-9 w-9" />
+            <div className="flex gap-x-3">
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-md bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image src={project.logo} alt="" className="h-9 w-9" />
+              </div>
+              <div>
+                <h2 className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
+                  <Card.Link href={project.link.href} target="_blank">
+                    {project.name}
+                  </Card.Link>
+                </h2>
+                <span className="sr-only">Year</span>
+                <Card.Eyebrow>{project.year}</Card.Eyebrow>
+              </div>
             </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href} target="_blank">
-                {project.name}
-              </Card.Link>
-            </h2>
             <Card.Description>{project.description}</Card.Description>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
               <LinkIcon className="h-6 w-6 flex-none" />
