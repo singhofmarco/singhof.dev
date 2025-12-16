@@ -44,9 +44,9 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 export default function Home() {
   return (
     <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+      <div className="grid grid-cols-1 gap-y-12 sm:gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
-          <div className="max-w-xs px-2.5 lg:max-w-none">
+          <div className="max-w-sm px-2.5 sm:max-w-xs lg:max-w-none">
             <Image
               src={headshot}
               width={1798}
@@ -58,7 +58,7 @@ export default function Home() {
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 lg:text-5xl dark:text-zinc-100">
             Marco Singhof
           </h1>
           <h2 className="text-lg font-medium leading-5 tracking-tight text-zinc-500 sm:text-xl dark:text-zinc-400">
