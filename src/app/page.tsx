@@ -51,7 +51,7 @@ export default function Home() {
               src={headshot}
               width={1798}
               height={1798}
-              alt=""
+              alt="Marco Singhof headshot"
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             />
