@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import portrait from '@/images/portrait.jpeg'
+import headshot from '@/images/headshot.jpeg'
 
 function SocialLink({
   className,
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="lg:pl-20">
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
-              src={portrait}
+              src={headshot}
               width={1798}
               height={1798}
               alt=""
