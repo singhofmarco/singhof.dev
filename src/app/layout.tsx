@@ -10,10 +10,8 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Marco Singhof',
     default:
-      'Marco Singhof - Software engineer, amateur cook, and multilingual in code and conversation.',
+      'Marco Singhof - Software engineer, multilingual in code and conversation',
   },
-  description:
-    'I\'m Marco, a software engineer and passionate about building software that helps people and businesses.',
 }
 
 export default function RootLayout({

@@ -1,264 +1,135 @@
-import Image, { type ImageProps } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
+import clsx from 'clsx'
+
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import logoCurran from '@/images/logos/curran.svg'
-import logoGeorgetown from '@/images/logos/georgetown.jpeg'
-import logoDos from '@/images/logos/dos.svg'
-import logoCipio from '@/images/logos/cipio.png'
-import logoLmu from '@/images/logos/lmu.jpeg'
+import portrait from '@/images/portrait.jpeg'
 
-function EducationIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function SocialLink({
+  className,
+  href,
+  children,
+  icon: Icon,
+}: {
+  className?: string
+  href: string
+  icon: React.ComponentType<{ className?: string }>
+  children: React.ReactNode
+}) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-        d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
-      />
-    </svg>
+    <li className={clsx(className, 'flex')}>
+      <Link
+        href={href}
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
+      >
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-blue-500" />
+        <span className="ml-4">{children}</span>
+      </Link>
+    </li>
   )
 }
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/90 dark:stroke-zinc-300"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        fillRule="evenodd"
+        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
       />
     </svg>
   )
 }
 
-function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export default function Home() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
-
-function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-function SocialLink({
-  icon: Icon,
-  ...props
-}: React.ComponentPropsWithoutRef<typeof Link> & {
-  icon: React.ComponentType<{ className?: string }>
-}) {
-  return (
-    <Link className="group -m-1 p-1" {...props} target="_blank">
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
-  )
-}
-
-interface Role {
-  company: string
-  title: string
-  logo: ImageProps['src']
-  start: string | { label: string; dateTime: string }
-  end: string | { label: string; dateTime: string }
-}
-
-function Role({ role }: { role: Role }) {
-  let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label
-  let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime
-
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
-
-  return (
-    <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center overflow-hidden rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" />
-      </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
-        <dd
-          className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100"
-          dangerouslySetInnerHTML={{ __html: role.company }}
-        ></dd>
-        <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {role.title}
-        </dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-          aria-label={`${startLabel} until ${endLabel}`}
-        >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
-          <span aria-hidden="true">—</span>{' '}
-          <time dateTime={endDate}>{endLabel}</time>
-        </dd>
-      </dl>
-    </li>
-  )
-}
-
-function Resume() {
-  let resume: Array<Role> = [
-    {
-      company: 'CIPIO.ai',
-      title: 'Software Engineer',
-      logo: logoCipio,
-      start: 'Jun 2025',
-      end: 'Aug 2025',
-    },
-    {
-      company: 'Curran Catalog LLC.',
-      title: 'Lead Software Engineer',
-      logo: logoCurran,
-      start: 'Jul 2018',
-      end: 'May 2023',
-    },
-    {
-      company: 'Curran Catalog LLC.',
-      title: 'Software Engineer',
-      logo: logoCurran,
-      start: 'Jan 2018',
-      end: 'Jun 2018',
-    },
-  ]
-
-  let education: Array<Role> = [
-    {
-      company: 'Georgetown University',
-      title: 'Master of Science in Computer Science',
-      logo: logoGeorgetown,
-      start: 'Aug 2024',
-      end: 'Dec 2025',
-    },
-    {
-      company: 'Ludwig-Maximilians-Universit&auml;t M&uuml;nchen',
-      title: 'Bachelor of Science in Computer Science',
-      logo: logoLmu,
-      start: 'Sep 2018',
-      end: 'Jun 2024',
-    },
-    {
-      company: 'U.S. Department of State',
-      title: 'Congress-Bundestag-Youth-Exchange',
-      logo: logoDos,
-      start: 'Aug 2017',
-      end: 'Jul 2018',
-    },
-  ]
-
-  return (
-    <div className="">
-      <div className="flex flex-col gap-x-24 gap-y-10 lg:flex-row">
-        <div className="w-full">
-          <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-            <BriefcaseIcon className="h-6 w-6 flex-none" />
-            <span className="ml-3">Experience</span>
-          </h2>
-          <ol className="mt-6 space-y-4">
-            {resume.map((role, roleIndex) => (
-              <Role key={roleIndex} role={role} />
-            ))}
-          </ol>
-        </div>
-        <div className="w-full">
-          <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-            <EducationIcon className="h-6 w-6 flex-none" />
-            <span className="ml-3">Education</span>
-          </h2>
-          <ol className="mt-6 space-y-4">
-            {education.map((role, roleIndex) => (
-              <Role key={roleIndex} role={role} />
-            ))}
-          </ol>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default async function Home() {
-  return (
-    <>
-      <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software engineer, amateur cook, and multilingual in code and
-            conversation.
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Marco, a software engineer based in Washington, D.C. I'm
-            passionate about building software that helps people and businesses.
-          </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://github.com/singhofmarco"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/marco-singhof/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
+    <Container className="mt-16 sm:mt-32">
+      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+        <div className="lg:pl-20">
+          <div className="max-w-xs px-2.5 lg:max-w-none">
+            <Image
+              src={portrait}
+              width={1798}
+              height={1798}
+              alt=""
+              sizes="(min-width: 1024px) 32rem, 20rem"
+              className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             />
           </div>
         </div>
-      </Container>
-
-      <Container className="mt-12">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-x-10 gap-y-20 lg:max-w-none">
-          <Resume />
+        <div className="lg:order-first lg:row-span-2">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Marco Singhof
+          </h1>
+          <h2 className="text-lg font-medium leading-5 tracking-tight text-zinc-500 sm:text-xl dark:text-zinc-400">
+            Software engineer, multilingual in code and conversation.
+          </h2>
+          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-300">
+            <p>
+              I shipped my first code in 2013 with{' '}
+              <a
+                className="italic hover:underline"
+                href="https://www.idownloadblog.com/2013/12/30/noslowanimations-ios-7/"
+                noopener
+                target="_blank"
+              >
+                NoSlowAnimations
+              </a>
+              , a jailbreak tweak that sped up iOS 7 animations and became one
+              of the most popular iPhone software modifications of its time.
+            </p>
+            <p>
+              For over five years, I served as Lead Software Engineer at Curran
+              Catalog, working across a wide range of projects—from redesigning
+              the company’s websites and migrating the payment processor to
+              Stripe, to building a CI/CD pipeline that supported a growing team
+              and expanding project requirements.
+            </p>
+            <p>
+              I earned my Bachelor’s degree in Computer Science from Ludwig
+              Maximilian University of Munich (LMU) and will receive my Master’s
+              degree in Computer Science from Georgetown University in December
+              2025.
+            </p>
+            <p>
+              Currently{' '}
+              <span className="font-medium text-green-500">available</span> for
+              new opportunities →{' '}
+              <a
+                className="font-bold hover:underline"
+                href="mailto:marco@singhof.dev"
+              >
+                marco@singhof.dev
+              </a>
+            </p>
+          </div>
         </div>
-      </Container>
-    </>
+        <div className="lg:pl-20">
+          <ul role="list">
+            <SocialLink
+              href="https://github.com/singhofmarco"
+              icon={GitHubIcon}
+              className="mt-4"
+            >
+              Follow on GitHub
+            </SocialLink>
+            <SocialLink
+              href="https://www.linkedin.com/in/marco-singhof/"
+              icon={LinkedInIcon}
+              className="mt-4"
+            >
+              Follow on LinkedIn
+            </SocialLink>
+            <SocialLink
+              href="mailto:marco@singhof.dev"
+              icon={MailIcon}
+              className="mt-4"
+            >
+              marco@singhof.dev
+            </SocialLink>
+          </ul>
+        </div>
+      </div>
+    </Container>
   )
 }
