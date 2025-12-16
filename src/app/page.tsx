@@ -70,7 +70,6 @@ export default function Home() {
               <a
                 className="italic hover:underline"
                 href="https://www.idownloadblog.com/2013/12/30/noslowanimations-ios-7/"
-                noopener
                 target="_blank"
               >
                 NoSlowAnimations
