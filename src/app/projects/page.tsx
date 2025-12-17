@@ -12,6 +12,20 @@ import { Badge } from '@/components/Badge'
 
 const projects = [
   {
+    name: 'Heard in Michigan',
+    description:
+      'Tool that syncs hearing recordings from the Michigan House and Senate video platforms, transcribes them, and enables content categorization and filtering.',
+    year: '2025',
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Whisper',
+      'OpenAI',
+      'Tailwind CSS',
+    ],
+  },
+  {
     name: 'Tastebuds AI',
     description:
       'Recipe generation app that makes it fun to try new dishes in the kitchen.',
@@ -106,6 +120,21 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+function SoundIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        fill="#00274c"
+        d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06Z"
+      />
+      <path
+        fill="#FFCB05"
+        d="M15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z"
+      />
+    </svg>
+  )
+}
+
 export const metadata: Metadata = {
   title: 'Projects',
   description: "Things I've made because I thought they were cool.",
@@ -125,13 +154,21 @@ export default function Projects() {
           <Card as="li" key={project.name}>
             <div className="flex gap-x-3">
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-md bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image src={project.logo} alt="" className="h-9 w-9" />
+                {project.logo ? (
+                  <Image src={project.logo} alt="" className="h-9 w-9" />
+                ) : (
+                  <SoundIcon className="h-6 w-6" />
+                )}
               </div>
               <div>
                 <h2 className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={project.link.href} target="_blank">
-                    {project.name}
-                  </Card.Link>
+                  {project.link ? (
+                    <Card.Link href={project.link.href} target="_blank">
+                      {project.name}
+                    </Card.Link>
+                  ) : (
+                    project.name
+                  )}
                 </h2>
                 <span className="sr-only">Year</span>
                 <Card.Eyebrow>{project.year}</Card.Eyebrow>
@@ -141,14 +178,16 @@ export default function Projects() {
             <div className="z-10 mt-6 flex w-full flex-1 flex-col justify-between gap-x-12 gap-y-6 lg:flex-row lg:items-end lg:gap-y-0">
               <div className="flex flex-1 flex-wrap gap-x-2 gap-y-1.5">
                 {project.skills.map((skill: string) => {
-                  return <Badge>{skill}</Badge>
+                  return <Badge noHover={project.link == null}>{skill}</Badge>
                 })}
               </div>
 
-              <p className="relative flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 lg:justify-end dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
+              {project.link && (
+                <p className="relative flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 lg:justify-end dark:text-zinc-200">
+                  <LinkIcon className="h-6 w-6 flex-none" />
+                  <span className="ml-2">{project.link.label}</span>
+                </p>
+              )}
             </div>
           </Card>
         ))}
