@@ -8,6 +8,7 @@ import logoDls from '@/images/logos/dls.svg'
 import logoTastebuds from '@/images/logos/tastebuds-ai.svg'
 import logoDarkFolders7 from '@/images/logos/darkfolders7.png'
 import logoNoSlowAnimations from '@/images/logos/noslowanimations.png'
+import { Badge } from '@/components/Badge'
 
 const projects = [
   {
@@ -17,6 +18,7 @@ const projects = [
     link: { href: 'https://www.tastebudsai.com', label: 'tastebudsai.com' },
     logo: logoTastebuds,
     year: '2024-2025',
+    skills: ['Next.js', 'React', 'TypeScript', 'AI SDK', 'OpenAI'],
   },
   {
     name: 'Curran Online',
@@ -24,6 +26,15 @@ const projects = [
     link: { href: 'https://www.curranonline.com', label: 'curranonline.com' },
     logo: logoCurran,
     year: '2018-2023',
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Laravel',
+      'PHP',
+      'SQL',
+      'TailwindCSS',
+    ],
   },
   {
     name: 'Sisalcarpet.com',
@@ -31,6 +42,15 @@ const projects = [
     link: { href: 'https://www.sisalcarpet.com', label: 'sisalcarpet.com' },
     logo: logoCurran,
     year: '2018-2023',
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Laravel',
+      'PHP',
+      'SQL',
+      'TailwindCSS',
+    ],
   },
   {
     name: 'Dental-Labor Singhof',
@@ -41,6 +61,7 @@ const projects = [
     },
     logo: logoDls,
     year: '2023',
+    skills: ['Next.js', 'React', 'TypeScript', 'TailwindCSS'],
   },
   {
     name: 'DarkFolders7',
@@ -51,6 +72,7 @@ const projects = [
     },
     logo: logoDarkFolders7,
     year: '2013',
+    skills: ['Objective-C'],
   },
   {
     name: 'NoSlowAnimations',
@@ -62,6 +84,7 @@ const projects = [
     },
     logo: logoNoSlowAnimations,
     year: '2013',
+    skills: ['Objective-C'],
   },
 ]
 
@@ -89,7 +112,7 @@ export default function Projects() {
     >
       <ul
         role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2"
       >
         {projects.map((project) => (
           <Card as="li" key={project.name}>
@@ -108,10 +131,18 @@ export default function Projects() {
               </div>
             </div>
             <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
+            <div className="z-10 mt-6 flex w-full flex-1 flex-col justify-between gap-x-12 gap-y-6 lg:flex-row lg:items-end lg:gap-y-0">
+              <div className="flex flex-1 flex-wrap gap-x-2 gap-y-1.5">
+                {project.skills.map((skill: string) => {
+                  return <Badge>{skill}</Badge>
+                })}
+              </div>
+
+              <p className="relative flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 lg:justify-end dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">{project.link.label}</span>
+              </p>
+            </div>
           </Card>
         ))}
       </ul>
