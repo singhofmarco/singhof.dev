@@ -8,6 +8,7 @@ import logoDls from '@/images/logos/dls.svg'
 import logoTastebuds from '@/images/logos/tastebuds-ai.svg'
 import logoDarkFolders7 from '@/images/logos/darkfolders7.png'
 import logoNoSlowAnimations from '@/images/logos/noslowanimations.png'
+import logoToDoodler from '@/images/logos/todoodler.png'
 import { Badge } from '@/components/Badge'
 
 const projects = [
@@ -83,6 +84,14 @@ const projects = [
     logo: logoDls,
     year: '2023',
     skills: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+  },
+  {
+    name: 'ToDoodler',
+    description:
+      'Android todo app with cross-device sync and support for multiple lists.',
+    logo: logoToDoodler,
+    year: '2016',
+    skills: ['Android SDK', 'Java', 'Firebase'],
   },
   {
     name: 'DarkFolders7',
