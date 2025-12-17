@@ -185,14 +185,14 @@ export default function Projects() {
             </div>
             <Card.Description>{project.description}</Card.Description>
             <div className="z-10 mt-6 flex w-full flex-1 flex-col justify-between gap-x-12 gap-y-6 lg:flex-row lg:items-end lg:gap-y-0">
-              <div className="flex flex-1 flex-wrap gap-x-2 gap-y-1.5">
+              <div className="flex flex-wrap gap-x-2 gap-y-1.5">
                 {project.skills.map((skill: string) => {
                   return <Badge noHover={project.link == null}>{skill}</Badge>
                 })}
               </div>
 
               {project.link && (
-                <p className="relative flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 lg:justify-end dark:text-zinc-200">
+                <p className="relative flex flex-shrink-0 text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 lg:justify-end dark:text-zinc-200">
                   <LinkIcon className="h-6 w-6 flex-none" />
                   <span className="ml-2">{project.link.label}</span>
                 </p>
