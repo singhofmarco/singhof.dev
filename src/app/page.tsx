@@ -65,7 +65,7 @@ export default function Home() {
             Software engineer, multilingual in code and conversation.
           </h2>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-300">
-            <div className="flex items-center gap-x-4 border-b border-b-zinc-200 pb-7 pl-2 sm:order-last sm:pl-0 dark:border-b-zinc-700">
+            <div className="flex items-center gap-x-4 border-b border-b-zinc-100 pb-7 pl-2 sm:order-last sm:pl-0 dark:border-b-zinc-700/40">
               <div className="flex h-3 w-3 rounded-full bg-green-400 shadow-inner before:h-3 before:w-3 before:animate-ping before:rounded-full before:ring-2 before:ring-inset before:ring-green-400"></div>
               <div>
                 Currently <span className="font-medium">available</span> for new
