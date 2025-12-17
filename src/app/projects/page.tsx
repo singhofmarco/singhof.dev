@@ -18,7 +18,14 @@ const projects = [
     link: { href: 'https://www.tastebudsai.com', label: 'tastebudsai.com' },
     logo: logoTastebuds,
     year: '2024-2025',
-    skills: ['Next.js', 'React', 'TypeScript', 'AI SDK', 'OpenAI'],
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'AI SDK',
+      'OpenAI',
+      'Tailwind CSS',
+    ],
   },
   {
     name: 'Curran Online',
@@ -33,7 +40,7 @@ const projects = [
       'Laravel',
       'PHP',
       'SQL',
-      'TailwindCSS',
+      'Tailwind CSS',
     ],
   },
   {
@@ -49,7 +56,7 @@ const projects = [
       'Laravel',
       'PHP',
       'SQL',
-      'TailwindCSS',
+      'Tailwind CSS',
     ],
   },
   {
@@ -61,7 +68,7 @@ const projects = [
     },
     logo: logoDls,
     year: '2023',
-    skills: ['Next.js', 'React', 'TypeScript', 'TailwindCSS'],
+    skills: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
   },
   {
     name: 'DarkFolders7',
