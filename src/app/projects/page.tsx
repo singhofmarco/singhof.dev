@@ -166,7 +166,9 @@ export default function Projects() {
                 {project.logo ? (
                   <Image src={project.logo} alt="" className="h-9 w-9" />
                 ) : (
-                  <SoundIcon className="h-6 w-6" />
+                  <div className=" rounded bg-zinc-50 p-1 shadow-sm">
+                    <SoundIcon className="h-6 w-6" />
+                  </div>
                 )}
               </div>
               <div>
