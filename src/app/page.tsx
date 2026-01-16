@@ -98,10 +98,9 @@ export default function Home() {
               and expanding project requirements.
             </p>
             <p>
-              I earned my Bachelor’s degree in Computer Science from Ludwig
-              Maximilian University of Munich (LMU) and will receive my Master’s
-              degree in Computer Science from Georgetown University in December
-              2025.
+              I earned my bachelor's degree in computer science from Ludwig
+              Maximilian University of Munich (LMU) and my master’s degree in
+              computer science from Georgetown University.
             </p>
           </div>
         </div>
