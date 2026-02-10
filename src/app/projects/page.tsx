@@ -9,23 +9,41 @@ import logoTastebuds from '@/images/logos/tastebuds-ai.png'
 import logoDarkFolders7 from '@/images/logos/darkfolders7.png'
 import logoNoSlowAnimations from '@/images/logos/noslowanimations.png'
 import logoToDoodler from '@/images/logos/todoodler.png'
+import logoGrubFyi from '@/images/logos/grub-fyi.png'
 import { Badge } from '@/components/Badge'
 
 const projects = [
   {
     name: 'Tastebuds AI',
     description:
-      'Recipe generation app that makes it fun to try new dishes in the kitchen.',
+      'A modern recipe management and discovery app that combines AI-powered recipe generation and image creation with rich organization tools like smart filters, cook logs, and folder-based collections.',
     link: { href: 'https://www.tastebudsai.com', label: 'tastebudsai.com' },
     logo: logoTastebuds,
     year: 'Work in Progress',
     skills: [
-      'Next.js',
-      'React',
+      'Next.js 16',
+      'React 19',
       'TypeScript',
-      'Vercel AI SDK',
+      'Tailwind CSS',
+      'AI SDK (OpenAI)',
+      'React Aria Components',
       'PostgreSQL',
-      'Inngest',
+    ],
+  },
+  {
+    name: 'grub.fyi',
+    description:
+      'A daily recipe app that uses AI to generate a small, curated set of chef-style recipes tailored for a beautiful, focused reading experience.',
+    link: { href: 'https://www.grub.fyi', label: 'grub.fyi' },
+    logo: logoGrubFyi,
+    year: '2026',
+    skills: [
+      'Next.js 16',
+      'React 19',
+      'TypeScript',
+      'Tailwind CSS',
+      'AI SDK (OpenAI)',
+      'React Aria Components',
     ],
   },
   {
