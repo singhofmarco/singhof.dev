@@ -5,13 +5,29 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoCurran from '@/images/logos/curran.svg'
 import logoDls from '@/images/logos/dls.svg'
-import logoTastebuds from '@/images/logos/tastebuds-ai.svg'
+import logoTastebuds from '@/images/logos/tastebuds-ai.png'
 import logoDarkFolders7 from '@/images/logos/darkfolders7.png'
 import logoNoSlowAnimations from '@/images/logos/noslowanimations.png'
 import logoToDoodler from '@/images/logos/todoodler.png'
 import { Badge } from '@/components/Badge'
 
 const projects = [
+  {
+    name: 'Tastebuds AI',
+    description:
+      'Recipe generation app that makes it fun to try new dishes in the kitchen.',
+    link: { href: 'https://www.tastebudsai.com', label: 'tastebudsai.com' },
+    logo: logoTastebuds,
+    year: 'Work in Progress',
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Vercel AI SDK',
+      'PostgreSQL',
+      'Inngest',
+    ],
+  },
   {
     name: 'Heard in Michigan',
     description:
@@ -22,22 +38,6 @@ const projects = [
       'React',
       'TypeScript',
       'Whisper',
-      'OpenAI',
-      'Tailwind CSS',
-    ],
-  },
-  {
-    name: 'Tastebuds AI',
-    description:
-      'Recipe generation app that makes it fun to try new dishes in the kitchen.',
-    link: { href: 'https://www.tastebudsai.com', label: 'tastebudsai.com' },
-    logo: logoTastebuds,
-    year: '2024-2025',
-    skills: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'AI SDK',
       'OpenAI',
       'Tailwind CSS',
     ],
