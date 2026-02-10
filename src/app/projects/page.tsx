@@ -180,17 +180,17 @@ export default function Projects() {
         {projects.map((project) => (
           <Card as="li" key={project.name}>
             <div className="flex gap-x-3">
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-md bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-md bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 {project.logo ? (
                   <Image src={project.logo} alt="" className="h-9 w-9" />
                 ) : (
-                  <div className=" rounded bg-zinc-50 p-1 shadow-sm">
+                  <div className="rounded-sm bg-zinc-50 p-1 shadow-xs">
                     <SoundIcon className="h-6 w-6" />
                   </div>
                 )}
               </div>
               <div>
-                <h2 className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
+                <h2 className="text-base leading-6 font-semibold text-zinc-800 dark:text-zinc-100">
                   {project.link ? (
                     <Card.Link href={project.link.href} target="_blank">
                       {project.name}
@@ -207,12 +207,16 @@ export default function Projects() {
             <div className="z-10 mt-6 flex w-full flex-1 flex-col justify-between gap-x-12 gap-y-6 lg:flex-row lg:items-end lg:gap-y-0">
               <div className="flex flex-wrap gap-x-2 gap-y-1.5">
                 {project.skills.map((skill: string) => {
-                  return <Badge noHover={project.link == null}>{skill}</Badge>
+                  return (
+                    <Badge key={skill} noHover={project.link == null}>
+                      {skill}
+                    </Badge>
+                  )
                 })}
               </div>
 
               {project.link && (
-                <p className="relative flex flex-shrink-0 text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 lg:justify-end dark:text-zinc-200">
+                <p className="relative flex shrink-0 text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 lg:justify-end dark:text-zinc-200">
                   <LinkIcon className="h-6 w-6 flex-none" />
                   <span className="ml-2">{project.link.label}</span>
                 </p>

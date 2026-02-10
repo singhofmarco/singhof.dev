@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'Marco Singhof - Software engineer, multilingual in code and conversation',
   },
   description:
-    'Looking to hire a software engineer? I’m Marco, an experienced developer skilled in TypeScript, React, Node.js, AWS, and more. I’m currently available for new opportunities.',
+    'Looking to hire a software engineer? I\'m Marco, an experienced developer skilled in TypeScript, React, Node.js, AWS, and more. I\'m currently available for new opportunities.',
 }
 
 export default function RootLayout({

@@ -2,7 +2,12 @@
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   images: {
-    domains: ['avatars.githubusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+    ],
   },
 }
 

@@ -93,14 +93,14 @@ export default function Home() {
             <p>
               For over five years, I served as Lead Software Engineer at Curran
               Catalog, working across a wide range of projects—from redesigning
-              the company’s websites and migrating the payment processor to
+              the company&apos;s websites and migrating the payment processor to
               Stripe, to building a CI/CD pipeline that supported a growing team
               and expanding project requirements.
             </p>
             <p>
-              I earned my bachelor's degree in computer science from Ludwig
-              Maximilian University of Munich (LMU) and my master’s degree in
-              computer science from Georgetown University.
+              I earned my bachelor&apos;s degree in computer science from Ludwig
+              Maximilian University of Munich (LMU) and my master&apos;s degree
+              in computer science from Georgetown University.
             </p>
           </div>
         </div>
